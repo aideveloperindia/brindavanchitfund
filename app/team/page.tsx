@@ -4,34 +4,34 @@ import Navigation from '@/components/Navigation'
 export default function TeamPage() {
   const teamMembers = {
     management: [
-      { name: "P. Srinivas", designation: "Managing Director", department: "Management" }
+      { name: "P. Srinivas", designation: "Managing Director", department: "Management", isHOD: true }
     ],
     accounting: [
       { name: "G. Satheesh", designation: "Accountant", department: "Accounting", isHOD: true },
-      { name: "K. Santhosh Kumar", designation: "Accountant", department: "Accounting" }
+      { name: "K. Santhosh Kumar", designation: "Accountant", department: "Accounting", isHOD: false }
     ],
     verification: [
       { name: "N. Krishna", designation: "Verification Officer", department: "Verification", isHOD: true },
-      { name: "N. Durga Prasad", designation: "Verification Officer", department: "Verification" },
-      { name: "M. Srinivas", designation: "Verification Officer", department: "Verification" },
-      { name: "B. Sanjeev", designation: "Verification Officer", department: "Verification" }
+      { name: "N. Durga Prasad", designation: "Verification Officer", department: "Verification", isHOD: false },
+      { name: "M. Srinivas", designation: "Verification Officer", department: "Verification", isHOD: false },
+      { name: "B. Sanjeev", designation: "Verification Officer", department: "Verification", isHOD: false }
     ],
     development: [
       { name: "G. Ramesh", designation: "Development Officer", department: "Development", isHOD: true },
-      { name: "G. Hanmandlu", designation: "Development Officer", department: "Development" }
+      { name: "G. Hanmandlu", designation: "Development Officer", department: "Development", isHOD: false }
     ],
     collection: [
       { name: "A. Kumara Swamy", designation: "Collection Officer", department: "Collection", isHOD: true },
-      { name: "M. Maruthi", designation: "Collection Officer", department: "Collection" },
-      { name: "A. Venugopal", designation: "Collection Officer", department: "Collection" },
-      { name: "L. Venkatesh Babu", designation: "Collection Officer", department: "Collection" },
-      { name: "K. Sravan Kumar", designation: "Collection Officer", department: "Collection" },
-      { name: "M. Kannaiah", designation: "Collection Officer", department: "Collection" },
-      { name: "P. Sathish", designation: "Collection Officer", department: "Collection" },
-      { name: "K. Kishan", designation: "Collection Officer", department: "Collection" },
-      { name: "G. Sandeep", designation: "Collection Officer", department: "Collection" },
-      { name: "S. Rajashekar", designation: "Collection Officer", department: "Collection" },
-      { name: "P. Vineeth", designation: "Collection Officer", department: "Collection" }
+      { name: "M. Maruthi", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "A. Venugopal", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "L. Venkatesh Babu", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "K. Sravan Kumar", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "M. Kannaiah", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "P. Sathish", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "K. Kishan", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "G. Sandeep", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "S. Rajashekar", designation: "Collection Officer", department: "Collection", isHOD: false },
+      { name: "P. Vineeth", designation: "Collection Officer", department: "Collection", isHOD: false }
     ]
   }
 
