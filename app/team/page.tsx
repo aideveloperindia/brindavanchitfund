@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation'
 export default function TeamPage() {
   const teamMembers = {
     management: [
-      { name: "P. Srinivas", designation: "Managing Director", department: "Management", isHOD: true }
+      { name: "P. Srinivas", designation: "Managing Director", department: "Management", isHOD: false }
     ],
     accounting: [
       { name: "G. Satheesh", designation: "Accountant", department: "Accounting", isHOD: true },
