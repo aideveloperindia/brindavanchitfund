@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import VideoModal from '@/components/VideoModal'
 
 export const metadata: Metadata = {
   title: 'Brindavan Chits Karimnagar - Trusted Chit Fund Since 2007',
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -19,8 +22,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="te" style={{ overflow: 'hidden' }}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body style={{ overflow: 'hidden', margin: 0, padding: 0 }}>
+        <LanguageProvider>
+          <VideoModal />
+          {children}
+        </LanguageProvider>
+      </body>
     </html>
   )
 }

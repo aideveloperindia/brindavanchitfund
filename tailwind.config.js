@@ -8,6 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: '#1B5E20',
+        accent: '#C99B3B',
         'brindavan-green': {
           50: '#f0fdf4',
           100: '#dcfce7',
@@ -20,6 +22,10 @@ module.exports = {
           800: '#166534',
           900: '#14532d',
         },
+      },
+      fontFamily: {
+        head: ['Poppins', 'Inter', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

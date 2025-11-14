@@ -22,7 +22,7 @@ export default function GalleryPage() {
     { id: 1, title: 'Company Introduction', description: 'Learn about our services and commitment' },
     { id: 2, title: 'How Chit Funds Work', description: 'Educational video explaining chit fund process' },
     { id: 3, title: 'Success Stories', description: 'Real stories from our satisfied members' },
-    { id: 4, title: 'Online Auction Demo', description: 'Demonstration of our new online auction feature' },
+    { id: 4, title: 'Online Auction', description: 'Overview of our online auction feature' },
   ]
 
   return (

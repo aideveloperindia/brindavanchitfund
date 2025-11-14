@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Home",
+    "chits": "Our Chits",
+    "auction": "Live Auction",
+    "vrm": "VRM System",
+    "news": "News & Events",
+    "branches": "Branches",
+    "leadership": "Leadership",
+    "quotation": "Quotation",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "headline": "Modern. Secure. Transparent. — Brindavan Chits",
+      "sub": "Easy. Transparent. Secure chit fund services.",
+      "primaryCta": "Get Started",
+      "secondaryCta": "Learn More"
+    },
+    "trust": {
+      "founded": "Founded",
+      "customers": "Our Customers",
+      "activeMembers": "Active Members",
+      "cin": "Company CIN"
+    },
+    "services": {
+      "auction": {
+        "title": "Live Auction",
+        "desc": "Conduct online chit auctions"
+      },
+      "vrm": {
+        "title": "VRM Operations",
+        "desc": "Field verification, collections & marketing"
+      },
+      "chits": {
+        "title": "Our Chits",
+        "desc": "Various chit schemes available"
+      }
+    },
+    "featuredChits": "Featured Chits",
+    "footerCta": "Contact for project quotation"
+  },
+  "chits": {
+    "title": "Our Chits",
+    "viewDetails": "View Details",
+    "filters": {
+      "amount": "Amount",
+      "duration": "Duration",
+      "frequency": "Frequency",
+      "branch": "Branch",
+      "status": "Status"
+    },
+    "status": {
+      "active": "Active",
+      "upcoming": "Upcoming"
+    },
+    "frequency": {
+      "monthly": "Monthly",
+      "weekly": "Weekly"
+    }
+  },
+  "auction": {
+    "title": "Live Auction",
+    "intro": "Live auction platform – conduct regular online chit auctions securely. Foreman generates link and subscribers join via web.",
+    "cta": "Start Auction",
+    "note": "This page provides access point to live auctions (production)."
+  },
+  "vrm": {
+    "title": "VRM System",
+    "headline": "Streamline field operations",
+    "features": [
+      "Geo-stamped selfie reports",
+      "Collection & recovery tracking",
+      "Hierarchy-based reporting",
+      "Special executive deployment"
+    ],
+    "cta": "View VRM"
+  },
+  "news": {
+    "title": "News & Events",
+    "readMore": "Read More"
+  },
+  "branches": {
+    "title": "Branches"
+  },
+  "leadership": {
+    "title": "Leadership",
+    "note": "Full list of directors and officers available on request."
+  },
+  "quotation": {
+    "title": "Quotation & Plans",
+    "intro": "Pricing for Website, VRM and Live Auction system. Contact for custom plans.",
+    "download": "Download Quotation",
+    "plans": {
+      "standard": {
+        "name": "Standard Package",
+        "features": [
+          "5s refresh",
+          "Foreman link sharing",
+          "PDF/CSV export"
+        ]
+      },
+      "premium": {
+        "name": "Premium Package",
+        "features": [
+          "WebSocket real-time",
+          "User accounts",
+          "Advanced analytics"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "message": "Message",
+      "preferredTime": "Preferred time to call",
+      "submit": "Submit"
+    }
+  }
+}
+
