@@ -56,25 +56,21 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-slate-200/80 pt-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
-              {language === 'te' ? 'డిజైన్ క్రెడిట్' : 'Design Credit'}
-            </p>
+          <div className="mx-auto flex max-w-3xl flex-col items-center justify-center gap-3 text-center sm:flex-row sm:flex-wrap sm:gap-x-4 sm:gap-y-2">
+            <span className="text-sm font-medium text-slate-600">
+              © 2026 Brindavan Chits Karimnagar (India) Pvt. Ltd.
+            </span>
+            <span className="hidden text-slate-300 sm:inline">•</span>
             <a
               href="https://www.aideveloperindia.store"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex flex-wrap items-center justify-center gap-2 text-base font-semibold text-[#0F2747] transition-colors hover:text-[#245C8E]"
+              className="inline-flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-[#0F2747] transition-colors hover:text-[#245C8E]"
             >
               <span>{language === 'te' ? 'Built by' : 'Built by'}</span>
               <Image src="/A-logo.png" alt="A-logo" width={24} height={24} className="h-6 w-6 rounded-full ring-1 ring-slate-200" />
               <span>AI Developer India</span>
             </a>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              {language === 'te'
-                ? 'మీ వెబ్ అనుభవాన్ని మరింత శుభ్రంగా, వేగంగా, మరియు ఆధునికంగా మార్చిన బిల్డ్.'
-                : 'A cleaner, faster, and more modern build for the website experience.'}
-            </p>
           </div>
         </div>
       </div>

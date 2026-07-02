@@ -149,9 +149,9 @@ const chairmanProfile: Record<'en' | 'te', ProfileCopy> = {
           'Through these roles, he continues to serve society beyond business and politics, guided by faith, culture, and compassion.',
       },
       {
-        title: 'Brundavan Chit Funds – A Symbol of Trust',
+        title: 'Brindavan Chit Funds – A Symbol of Trust',
         paragraphs: [
-          'Under the visionary leadership of Sri Vavilala Hanumanth Reddy, Brundavan Chit Funds, established in 2007, has successfully completed 18 years of steady growth and excellence.',
+          'Under the visionary leadership of Sri Vavilala Hanumanth Reddy, Brindavan Chit Funds, established in 2007, has successfully completed 18 years of steady growth and excellence.',
           'Built on the foundation of trust, ethical practices, and customer-centric service, the company has earned a strong reputation for:',
         ],
         bullets: [
@@ -160,7 +160,7 @@ const chairmanProfile: Record<'en' | 'te', ProfileCopy> = {
           'Reliable and quality service to customers',
         ],
         conclusion:
-          'Today, Brundavan Chit Funds stands as a trusted financial institution, progressing confidently with customer satisfaction as its core strength.',
+          'Today, Brindavan Chit Funds stands as a trusted financial institution, progressing confidently with customer satisfaction as its core strength.',
       },
     ],
     messageLabel: 'Message',
@@ -261,7 +261,7 @@ export default function LeadershipPage() {
           <p className='mx-auto max-w-3xl text-lg leading-8 text-white/90 md:text-xl'>
             {language === 'te'
               ? 'Brindavan చిట్టీలు నమ్మకంతో ముందుకు సాగడానికి అనుభవజ్ఞులైన బోర్డ్ ఆఫ్ డైరెక్టర్స్ పర్యవేక్షణలో పనిచేస్తున్నాయి'
-              : 'Brundavan Chit Funds is guided by an experienced and dedicated board of directors who ensure trust and transparency.'}
+              : 'Brindavan Chit Funds is guided by an experienced and dedicated board of directors who ensure trust and transparency.'}
           </p>
         </div>
       </section>

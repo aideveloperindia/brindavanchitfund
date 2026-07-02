@@ -166,7 +166,7 @@ export default function ContactPage() {
             <h3 className="text-3xl font-black mb-4">
               {language === 'te' ? 'మీరు మాకు సంప్రదించవచ్చు' : 'You Can Reach Us'}
             </h3>
-            <p className="text-sky-100 mb-8 text-lg max-w-2xl mx-auto">
+            <p className="text-white/95 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
               {language === 'te' 
                 ? 'మా బ్రాంచ్‌లు మరియు కార్యాలయ గంటల గురించి మరింత సమాచారం కోసం బ్రాంచ్‌లు పేజీని చూడండి'
                 : 'Visit our Branches page for more information about our branch locations and office hours'

@@ -59,7 +59,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="premium-card p-8 bg-gradient-to-br from-[#0F2747]/10 to-[#245C8E]/10">
+                <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-6 md:p-8 shadow-sm shadow-slate-900/5">
                   <Image
                     src="/LOGO.png"
                     alt="Brindavan Chits Logo"
@@ -67,6 +67,12 @@ export default function AboutPage() {
                     height={350}
                     className="mx-auto rounded-2xl shadow-2xl"
                   />
+                  <p className="mt-5 text-sm font-bold uppercase tracking-[0.25em] text-[#D9A441]">
+                    {language === 'te' ? '2007 నుంచి విశ్వాసం' : 'Trusted Since 2007'}
+                  </p>
+                  <p className="mt-2 text-base text-slate-600">
+                    Brindavan Chits Karimnagar (India) Pvt. Ltd.
+                  </p>
                 </div>
               </div>
             </div>
