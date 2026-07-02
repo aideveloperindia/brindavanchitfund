@@ -1,0 +1,83 @@
+'use client'
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { getPathWithLanguage } from '@/lib/i18n'
+
+const quickLinks = [
+  { href: '/', label_en: 'Home', label_te: 'హోమ్' },
+  { href: '/chits', label_en: 'Our Chits', label_te: 'మా చిట్టీలు' },
+  { href: '/auction', label_en: 'Live Auction', label_te: 'లైవ్ వేలం' },
+  { href: '/news', label_en: 'News', label_te: 'వార్తలు' },
+  { href: '/contact', label_en: 'Contact', label_te: 'సంప్రదించండి' },
+]
+
+export default function SiteFooter() {
+  const { language } = useLanguage()
+
+  const getLocalizedPath = (path: string) => getPathWithLanguage(path, language)
+
+  return (
+    <footer className="relative z-10 border-t border-slate-200/80 bg-gradient-to-b from-white/95 via-slate-50/95 to-sky-50/90 text-slate-800 backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr] lg:grid-cols-[1.35fr_0.95fr]">
+          <div className="space-y-4">
+            <Link href={getLocalizedPath('/')} className="inline-flex items-center gap-3">
+              <Image src="/LOGO.png" alt="Brindavan Chits Logo" width={52} height={52} className="rounded-full" />
+              <div>
+                <p className="text-lg font-black tracking-tight text-[#0F2747]">Brindavan Chits</p>
+                <p className="text-sm text-slate-600">Karimnagar (India) Pvt. Ltd.</p>
+              </div>
+            </Link>
+            <p className="max-w-xl text-sm leading-relaxed text-slate-600">
+              {language === 'te'
+                ? '2007 నుంచి కరీంనగర్ నుండి నమ్మకమైన చిట్టీ సేవలను అందిస్తున్నాము, ఇప్పుడు మరింత ఆధునికంగా మరియు కాంపాక్ట్ అనుభవంతో.'
+                : 'Serving trusted chit fund services from Karimnagar since 2007, now with a more modern and compact experience.'}
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-200/80 bg-white/70 p-5 shadow-sm shadow-slate-900/5">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#D9A441]">
+              {language === 'te' ? 'త్వరిత లింకులు' : 'Quick Links'}
+            </h3>
+            <div className="grid gap-2 text-sm">
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={getLocalizedPath(link.href)}
+                  className="text-slate-600 transition-colors hover:text-[#0F2747]"
+                >
+                  {language === 'te' ? link.label_te : link.label_en}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-slate-200/80 pt-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#D9A441]">
+              {language === 'te' ? 'డిజైన్ క్రెడిట్' : 'Design Credit'}
+            </p>
+            <a
+              href="https://www.aideveloperindia.store"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex flex-wrap items-center justify-center gap-2 text-base font-semibold text-[#0F2747] transition-colors hover:text-[#245C8E]"
+            >
+              <span>{language === 'te' ? 'Built by' : 'Built by'}</span>
+              <Image src="/A-logo.png" alt="A-logo" width={24} height={24} className="h-6 w-6 rounded-full ring-1 ring-slate-200" />
+              <span>AI Developer India</span>
+            </a>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              {language === 'te'
+                ? 'మీ వెబ్ అనుభవాన్ని మరింత శుభ్రంగా, వేగంగా, మరియు ఆధునికంగా మార్చిన బిల్డ్.'
+                : 'A cleaner, faster, and more modern build for the website experience.'}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
