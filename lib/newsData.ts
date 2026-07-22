@@ -19,15 +19,6 @@ export const newsItems: NewsItem[] = [
     category: "New Schemes"
   },
   {
-    id: "2",
-    date: "2024-12-20",
-    title_te: "ఆన్‌లైన్ లైవ్ వేలాల విజయవంత ప్రారంభం",
-    title_en: "Successful Launch of Live Online Auctions",
-    summary_te: "మనం ఆన్‌లైన్ వేలా వ్యవస్థను విజయవంతంగా ప్రారంభించాము. సభ్యులు ఇంటి నుండే వేలాలలో పాల్గొనవచ్చు.",
-    summary_en: "We have successfully launched our online auction system. Members can now participate in auctions from the comfort of their homes.",
-    category: "Technology"
-  },
-  {
     id: "3",
     date: "2024-11-10",
     title_te: "17వ వార్షికోత్సవం విజయవంతంగా నిర్వహించబడింది",
@@ -44,15 +35,6 @@ export const newsItems: NewsItem[] = [
     summary_te: "బృందావన్ చిట్టీలు 30,000+ సభ్యుల మైల్‌స్టోన్‌ను చేరుకుంది. మీ నమ్మకానికి కృతజ్ఞతలు!",
     summary_en: "Brindavan Chits has reached the milestone of 30,000+ members. Thank you for your trust!",
     category: "Achievement"
-  },
-  {
-    id: "6",
-    date: "2024-08-25",
-    title_te: "కొత్త వారానికి చిట్టీ పథకం ప్రారంభం",
-    title_en: "New Weekly Chit Scheme Launched",
-    summary_te: "₹50,000 వారానికి చిట్టీ పథకం ఇప్పుడు అందుబాటులో ఉంది. వారానికి చెల్లింపు సౌకర్యం.",
-    summary_en: "₹50,000 weekly chit scheme is now available. Convenient weekly payment option.",
-    category: "New Schemes"
   },
   {
     id: "7",

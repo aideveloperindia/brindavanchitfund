@@ -1,15 +1,15 @@
 'use client'
 
-import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { getPathWithLanguage } from '@/lib/i18n'
+import { branches } from '@/lib/branchData'
 import { useState } from 'react'
 
 const contactInfo = {
   email: "info@brindavanchits.in",
-  phone: "9705166110",
-  address: "7-2-616 Mankamma Thota, Karimnagar - 505001"
+  phone: "0878-2269666",
+  mobile: "9705166110",
+  address: "7-2-616, Near Old Labour Adda, Mankamma Thota, Karimnagar, Telangana – 505001"
 }
 
 export default function ContactPage() {
@@ -20,8 +20,6 @@ export default function ContactPage() {
     message: '',
     preferredTime: ''
   })
-
-  const getLocalizedPath = (path: string) => getPathWithLanguage(path, language)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -78,8 +76,19 @@ export default function ContactPage() {
                   </div>
                   <div className="flex-1">
                     <p className="font-black text-gray-800 mb-2 text-lg">{language === 'te' ? 'ఫోన్' : 'Phone'}</p>
-                    <a href={`tel:${contactInfo.phone}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold text-lg transition-colors">
+                    <a href={`tel:${contactInfo.phone.replace(/-/g, '')}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold text-lg transition-colors">
                       {contactInfo.phone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6 group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-3xl">📱</span>
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-black text-gray-800 mb-2 text-lg">{language === 'te' ? 'మొబైల్' : 'Mobile'}</p>
+                    <a href={`tel:${contactInfo.mobile}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold text-lg transition-colors">
+                      {contactInfo.mobile}
                     </a>
                   </div>
                 </div>
@@ -162,23 +171,46 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="premium-card p-10 bg-gradient-to-br from-[#0F2747] to-[#245C8E] text-white text-center">
-            <h3 className="text-3xl font-black mb-4">
-              {language === 'te' ? 'మీరు మాకు సంప్రదించవచ్చు' : 'You Can Reach Us'}
-            </h3>
-            <p className="text-white/95 mb-8 text-lg leading-relaxed max-w-2xl mx-auto">
-              {language === 'te' 
-                ? 'మా బ్రాంచ్‌లు మరియు కార్యాలయ గంటల గురించి మరింత సమాచారం కోసం బ్రాంచ్‌లు పేజీని చూడండి'
-                : 'Visit our Branches page for more information about our branch locations and office hours'
-              }
-            </p>
-            <Link
-              href={getLocalizedPath('/branches')}
-              className="inline-block bg-[#D9A441] hover:bg-[#B7791F] text-white px-10 py-4 rounded-full transition-all duration-300 font-black text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 btn-premium"
-            >
-              {t.nav.branches}
-            </Link>
-          </div>
+          <section className="mb-12">
+            <h2 className="text-3xl font-black text-[#0F2747] mb-8 text-center">
+              {language === 'te' ? 'మా శాఖలు' : 'Our Branches'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {branches.map((branch, index) => (
+                <div
+                  key={index}
+                  className="premium-card p-6 hover-lift"
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0F2747] to-[#245C8E] rounded-xl flex items-center justify-center mb-4">
+                    <span className="text-2xl">📍</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0F2747] mb-4">
+                    {language === 'te' ? branch.name_te : branch.name}
+                  </h3>
+                  <div className="space-y-3 text-gray-600">
+                    <div className="flex items-start">
+                      <span className="mr-2 font-semibold shrink-0">{language === 'te' ? 'చిరునామా:' : 'Address:'}</span>
+                      <span>{language === 'te' ? branch.address_te : branch.address}</span>
+                    </div>
+                    {branch.phone && (
+                      <div className="flex items-center">
+                        <span className="mr-2 font-semibold">{language === 'te' ? 'ఫోన్:' : 'Phone:'}</span>
+                        <a href={`tel:${branch.phone.replace(/-/g, '')}`} className="font-semibold text-[#0F2747] hover:text-[#245C8E]">
+                          {branch.phone}
+                        </a>
+                      </div>
+                    )}
+                    <div className="flex items-center">
+                      <span className="mr-2 font-semibold">{language === 'te' ? 'మొబైల్:' : 'Mobile:'}</span>
+                      <a href={`tel:${branch.mobile}`} className="font-semibold text-[#0F2747] hover:text-[#245C8E]">
+                        {branch.mobile}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </div>

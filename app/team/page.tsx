@@ -8,7 +8,7 @@ export default function TeamPage() {
   const { language } = useLanguage()
   const teamMembers = {
     management: [
-      { name: "P. Srinivas", designation: "Managing Director", department: "Management", isHOD: false }
+      { name: "P. Srinivas", designation: "Managing Director", department: "Management", isHOD: false, experience: "30 Years" }
     ],
     accounting: [
       { name: "G. Satheesh", designation: "Accountant", department: "Accounting", isHOD: true },
@@ -129,6 +129,9 @@ export default function TeamPage() {
                             {member.designation}
                             {member.isHOD && <span className="ml-2 bg-sky-100 text-sky-800 px-2 py-1 rounded-full text-xs font-semibold">HOD</span>}
                           </p>
+                          {'experience' in member && member.experience && (
+                            <p className="text-xs font-semibold text-[#0F2747] mt-1">{member.experience} Experience</p>
+                          )}
                         </div>
                       </div>
                     </div>

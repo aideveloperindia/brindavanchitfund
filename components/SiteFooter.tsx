@@ -8,7 +8,6 @@ import { getPathWithLanguage } from '@/lib/i18n'
 const quickLinks = [
   { href: '/', label_en: 'Home', label_te: 'హోమ్' },
   { href: '/chits', label_en: 'Our Chits', label_te: 'మా చిట్టీలు' },
-  { href: '/auction', label_en: 'Live Auction', label_te: 'లైవ్ వేలం' },
   { href: '/news', label_en: 'News', label_te: 'వార్తలు' },
   { href: '/contact', label_en: 'Contact', label_te: 'సంప్రదించండి' },
 ]
@@ -24,7 +23,8 @@ export default function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr] lg:grid-cols-[1.35fr_0.95fr]">
           <div className="space-y-4">
             <Link href={getLocalizedPath('/')} className="inline-flex items-center gap-3">
-              <Image src="/LOGO.png" alt="Brindavan Chits Logo" width={52} height={52} className="rounded-full" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Brindavan Chits Logo" className="h-10 w-auto max-w-[180px] object-contain" />
               <div>
                 <p className="text-lg font-black tracking-tight text-[#0F2747]">Brindavan Chits</p>
                 <p className="text-sm text-slate-600">Karimnagar (India) Pvt. Ltd.</p>

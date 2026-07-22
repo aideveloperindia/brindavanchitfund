@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -60,12 +59,11 @@ export default function AboutPage() {
               </div>
               <div className="text-center">
                 <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-6 md:p-8 shadow-sm shadow-slate-900/5">
-                  <Image
-                    src="/LOGO.png"
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/logo.svg"
                     alt="Brindavan Chits Logo"
-                    width={350}
-                    height={350}
-                    className="mx-auto rounded-2xl shadow-2xl"
+                    className="mx-auto h-auto w-full max-w-[350px] object-contain"
                   />
                   <p className="mt-5 text-sm font-bold uppercase tracking-[0.25em] text-[#D9A441]">
                     {language === 'te' ? '2007 నుంచి విశ్వాసం' : 'Trusted Since 2007'}
@@ -145,7 +143,7 @@ export default function AboutPage() {
                     <span className="text-3xl">🏢</span>
                   </div>
                   <div>
-                    <p className="font-black text-gray-800 text-lg">3 {language === 'te' ? 'శాఖలు' : 'Branch Locations'}</p>
+                    <p className="font-black text-gray-800 text-lg">4 {language === 'te' ? 'శాఖలు' : 'Branch Locations'}</p>
                     <p className="text-sm text-gray-600">{language === 'te' ? 'తెలంగాణలో' : 'Across Telangana'}</p>
                   </div>
                 </div>
@@ -166,28 +164,27 @@ export default function AboutPage() {
             <p className="text-center text-lg text-gray-600 mb-8">
               {language === 'te' 
                 ? 'మా బోర్డు ఆఫ్ డైరెక్టర్లు 17+ సంవత్సరాల అనుభవంతో నాయకత్వం చేస్తున్నారు'
-                : 'Our Board of Directors provides leadership with 17+ years of experience'
+                : 'Our Board of Directors provides leadership with experience since 2007'
               }
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="premium-card p-6 bg-gradient-to-br from-sky-100 to-slate-50 border-2 border-sky-300 hover-lift">
                 <h3 className="text-xl font-black text-[#0F2747] mb-3">{language === 'te' ? 'చైర్మన్' : 'Chairman'}</h3>
                 <p className="text-gray-800 font-bold text-lg">Vavilala Hanumantha Reddy</p>
-                <p className="text-sm text-gray-600 mt-2">{language === 'te' ? 'అక్టోబర్ 2007 నుండి' : 'Since October 2007'}</p>
               </div>
               
               <div className="premium-card p-6 bg-gradient-to-br from-blue-100 to-blue-50 border-2 border-blue-300 hover-lift">
                 <h3 className="text-xl font-black text-[#0F2747] mb-3">{language === 'te' ? 'మేనేజింగ్ డైరెక్టర్' : 'Managing Director'}</h3>
                 <p className="text-gray-800 font-bold text-lg">Penta Srinivas</p>
-                <p className="text-sm text-gray-600 mt-2">{language === 'te' ? 'డిసెంబర్ 2011 నుండి' : 'Since December 2011'}</p>
+                <p className="text-sm text-gray-600 mt-2">{language === 'te' ? '30 సంవత్సరాల అనుభవం' : '30 Years Experience'}</p>
               </div>
               
               <div className="premium-card p-6 bg-gradient-to-br from-purple-100 to-purple-50 border-2 border-purple-300 hover-lift md:col-span-2 lg:col-span-1">
                 <h3 className="text-xl font-black text-[#0F2747] mb-3">{language === 'te' ? 'డైరెక్టర్లు' : 'Directors'}</h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {language === 'te' 
-                    ? '9 డైరెక్టర్లు - అక్టోబర్ 2007 మరియు డిసెంబర్ 2011 నుండి సేవలు అందిస్తున్నారు'
-                    : '9 Directors - Serving since October 2007 and December 2011'
+                    ? '8 డైరెక్టర్లు - అనుభవజ్ఞులైన నాయకత్వ బృందం'
+                    : '8 Directors - An experienced leadership team'
                   }
                 </p>
                 <Link 

@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getPathWithLanguage } from '@/lib/i18n'
@@ -15,23 +14,18 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-xl shadow-sm shadow-slate-900/5">
+    <nav className="fixed top-0 z-50 w-full border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3">
-          <Link href={getLocalizedPath('/')} className="flex items-center">
-            <Image
-              src="/LOGO.png"
-              alt="Brindavan Chits Logo"
-              width={60}
-              height={60}
-              className="mr-3 rounded-full ring-1 ring-slate-200"
+        <div className="flex h-14 items-center justify-between gap-4">
+          <Link href={getLocalizedPath('/')} className="flex h-11 shrink-0 items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.svg"
+              alt="Brindavan Chits"
+              className="h-11 w-auto max-w-[220px] object-contain object-left sm:max-w-[260px]"
             />
-            <div>
-              <h1 className="text-lg font-black tracking-tight text-[#0F2747]">Brindavan Chits</h1>
-              <p className="text-xs text-slate-600">Karimnagar (India) Pvt. Ltd.</p>
-            </div>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-7 md:flex">
             <Link href={getLocalizedPath('/')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
@@ -39,9 +33,6 @@ export default function Navigation() {
             </Link>
             <Link href={getLocalizedPath('/chits')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
               {t.nav.chits}
-            </Link>
-            <Link href={getLocalizedPath('/auction')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
-              {t.nav.auction}
             </Link>
             <Link href={getLocalizedPath('/news')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
               {t.nav.news}
@@ -52,7 +43,7 @@ export default function Navigation() {
             <Link href={getLocalizedPath('/contact')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
               {t.nav.contact}
             </Link>
-            
+
             {/* Language Toggle */}
             <button
               onClick={() => {
@@ -65,7 +56,7 @@ export default function Navigation() {
               {language === 'en' ? 'EN' : 'తెలుగు'}
             </button>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="flex items-center gap-3 md:hidden">
             <button
@@ -77,7 +68,7 @@ export default function Navigation() {
             >
               {language === 'en' ? 'EN' : 'తెలుగు'}
             </button>
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-slate-700 transition-colors hover:text-[#0F2747] focus:outline-none"
             >
@@ -87,14 +78,13 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-        
+
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="space-y-1 border-t border-slate-200/70 bg-white/95 px-2 py-3 shadow-lg shadow-slate-900/5">
+            <div className="space-y-1 border-t border-slate-200 bg-white px-2 py-3 shadow-lg">
               <Link href={getLocalizedPath('/')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.home}</Link>
               <Link href={getLocalizedPath('/chits')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.chits}</Link>
-              <Link href={getLocalizedPath('/auction')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.auction}</Link>
               <Link href={getLocalizedPath('/news')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.news}</Link>
               <Link href={getLocalizedPath('/leadership')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.leadership}</Link>
               <Link href={getLocalizedPath('/contact')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.contact}</Link>

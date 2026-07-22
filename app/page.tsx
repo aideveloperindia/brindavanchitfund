@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { getPathWithLanguage } from '@/lib/i18n'
 import { useState, useEffect } from 'react'
 import { getLatestNews } from '@/lib/newsData'
+import { branches } from '@/lib/branchData'
 
 const chitCatalog = [
   { id: "CHT-100K-20M-25", name_en: "Classic 1,00,000 Chit", name_te: "క్లాసిక్ 1,00,000 చిట్టి", amount: 100000, months: [20], members: 25, frequency: "monthly", status: "active" },
@@ -52,7 +53,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Premium Cinematic Hero Section */}
-      <section className="relative pt-20 pb-32 px-6 min-h-[95vh] flex flex-col justify-start items-center overflow-hidden">
+      <section className="relative pt-24 pb-32 px-6 min-h-[95vh] flex flex-col justify-start items-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0F2747] via-[#245C8E] to-[#0F2747]">
           <div className="absolute top-0 left-0 w-full h-full">
@@ -94,13 +95,6 @@ export default function HomePage() {
             >
               {t.home.hero.secondaryCta}
             </Link>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
@@ -147,10 +141,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                href: '/auction',
-                icon: '🔨',
-                title: t.home.services.auction.title,
-                desc: t.home.services.auction.desc,
+                href: '/leadership',
+                icon: '👥',
+                title: language === 'te' ? 'నాయకత్వం' : 'Leadership',
+                desc: language === 'te' ? 'మా అనుభవజ్ఞులైన బోర్డు' : 'Meet our experienced board of directors',
                 gradient: 'from-blue-500 to-blue-600',
                 bgGradient: 'from-blue-50 to-blue-100'
               },
@@ -368,24 +362,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Head Office - Karimnagar",
-                address: "7-2-616, Mankamma Thota, Karimnagar - 505001",
-                phone: "0878-2269666"
-              },
-              {
-                name: "Jagtial Branch",
-                address: "NGO Building, Tahasil Chowrastha, Jagtial - 505327",
-                phone: "08724-226966"
-              },
-              {
-                name: "Godavarikhani / Ramagundam Branch",
-                address: "FCI 'X' Road, Godavarikhani - 505209",
-                phone: "08728-274166"
-              }
-            ].map((branch, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {branches.map((branch, index) => (
               <div
                 key={index}
                 className="premium-card p-8 hover-lift group"
@@ -394,18 +372,26 @@ export default function HomePage() {
                 <div className="w-20 h-20 bg-gradient-to-br from-[#0F2747] to-[#245C8E] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
                   <span className="text-4xl">📍</span>
                 </div>
-                <h3 className="text-2xl font-black text-[#0F2747] mb-6 text-center group-hover:text-[#245C8E] transition-colors">
-                  {branch.name}
+                <h3 className="text-xl font-black text-[#0F2747] mb-6 text-center group-hover:text-[#245C8E] transition-colors">
+                  {language === 'te' ? branch.name_te : branch.name}
                 </h3>
                 <div className="space-y-4 text-gray-600">
                   <div className="flex items-start">
-                    <span className="mr-3 font-bold text-gray-700">{language === 'te' ? 'చిరునామా:' : 'Address:'}</span>
-                    <span className="text-base leading-relaxed">{branch.address}</span>
+                    <span className="mr-3 font-bold text-gray-700 shrink-0">{language === 'te' ? 'చిరునామా:' : 'Address:'}</span>
+                    <span className="text-sm leading-relaxed">{language === 'te' ? branch.address_te : branch.address}</span>
                   </div>
+                  {branch.phone && (
+                    <div className="flex items-center">
+                      <span className="mr-3 font-bold text-gray-700">{language === 'te' ? 'ఫోన్:' : 'Phone:'}</span>
+                      <a href={`tel:${branch.phone.replace(/-/g, '')}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold transition-colors">
+                        {branch.phone}
+                      </a>
+                    </div>
+                  )}
                   <div className="flex items-center">
-                    <span className="mr-3 font-bold text-gray-700">{language === 'te' ? 'ఫోన్:' : 'Phone:'}</span>
-                    <a href={`tel:${branch.phone}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold text-lg transition-colors">
-                      {branch.phone}
+                    <span className="mr-3 font-bold text-gray-700">{language === 'te' ? 'మొబైల్:' : 'Mobile:'}</span>
+                    <a href={`tel:${branch.mobile}`} className="text-[#0F2747] hover:text-[#245C8E] font-bold transition-colors">
+                      {branch.mobile}
                     </a>
                   </div>
                 </div>
