@@ -62,7 +62,7 @@ export default function SiteFooter() {
             </span>
             <span className="hidden text-slate-300 sm:inline">•</span>
             <a
-              href="https://www.aideveloperindia.store"
+              href="https://wa.me/919505009699"
               target="_blank"
               rel="noreferrer"
               className="inline-flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-[#0F2747] transition-colors hover:text-[#245C8E]"
