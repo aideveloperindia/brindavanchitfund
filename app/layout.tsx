@@ -4,11 +4,43 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 import SiteBackdrop from '@/components/SiteBackdrop'
 import SiteFooter from '@/components/SiteFooter'
 
+const siteUrl = 'https://brindavanchitfund.vercel.app'
+const siteTitle = 'Brindavan Chits Karimnagar - Trusted Chit Fund Since 2007'
+const siteDescription =
+  'Brindavan Chits Karimnagar (India) Pvt. Ltd. - Serving 30,000+ members with transparent chit management. Established in 2007.'
+
 export const metadata: Metadata = {
-  title: 'Brindavan Chits Karimnagar - Trusted Chit Fund Since 2007',
-  description: 'Brindavan Chits Karimnagar (India) Pvt. Ltd. - Serving 30,000+ members with transparent chit management. Established in 2007.',
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
   keywords: 'chit fund, karimnagar, telangana, brindavan chits, chit schemes, investment',
   authors: [{ name: 'Brindavan Chits' }],
+  icons: {
+    icon: [{ url: '/logo.png', type: 'image/png' }],
+    apple: [{ url: '/logo.png', type: 'image/png' }],
+    shortcut: '/logo.png',
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'Brindavan Chits Karimnagar',
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: '/logo.png',
+        width: 1600,
+        height: 900,
+        alt: 'Brindavan Chits Karimnagar',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: ['/logo.png'],
+  },
 }
 
 export const viewport: Viewport = {

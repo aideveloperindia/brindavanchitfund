@@ -8,7 +8,7 @@ import { getPathWithLanguage } from '@/lib/i18n'
 const quickLinks = [
   { href: '/', label_en: 'Home', label_te: 'హోమ్' },
   { href: '/chits', label_en: 'Our Chits', label_te: 'మా చిట్టీలు' },
-  { href: '/news', label_en: 'News', label_te: 'వార్తలు' },
+  { href: '/gallery', label_en: 'Gallery', label_te: 'గ్యాలరీ' },
   { href: '/contact', label_en: 'Contact', label_te: 'సంప్రదించండి' },
 ]
 

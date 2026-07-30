@@ -3,7 +3,7 @@
     "home": "Home",
     "chits": "Our Chits",
     "auction": "Live Auction",
-    "news": "News & Events",
+    "gallery": "Gallery",
     "branches": "Branches",
     "leadership": "Leadership",
     "quotation": "Quotation",
@@ -60,9 +60,10 @@
     "cta": "Start Auction",
     "note": "This page provides access point to live auctions (production)."
   },
-  "news": {
-    "title": "News & Events",
-    "readMore": "Read More"
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Photos and videos from our office, events, and team",
+    "viewAll": "View Gallery"
   },
   "branches": {
     "title": "Branches"

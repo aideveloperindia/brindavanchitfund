@@ -34,8 +34,8 @@ export default function Navigation() {
             <Link href={getLocalizedPath('/chits')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
               {t.nav.chits}
             </Link>
-            <Link href={getLocalizedPath('/news')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
-              {t.nav.news}
+            <Link href={getLocalizedPath('/gallery')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
+              {t.nav.gallery}
             </Link>
             <Link href={getLocalizedPath('/leadership')} className="text-sm font-medium text-slate-700 transition-colors hover:text-[#0F2747]">
               {t.nav.leadership}
@@ -85,7 +85,7 @@ export default function Navigation() {
             <div className="space-y-1 border-t border-slate-200 bg-white px-2 py-3 shadow-lg">
               <Link href={getLocalizedPath('/')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.home}</Link>
               <Link href={getLocalizedPath('/chits')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.chits}</Link>
-              <Link href={getLocalizedPath('/news')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.news}</Link>
+              <Link href={getLocalizedPath('/gallery')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.gallery}</Link>
               <Link href={getLocalizedPath('/leadership')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.leadership}</Link>
               <Link href={getLocalizedPath('/contact')} onClick={() => setIsMenuOpen(false)} className="block rounded-xl px-3 py-2 font-medium text-slate-700 hover:bg-slate-100 hover:text-[#0F2747]">{t.nav.contact}</Link>
             </div>

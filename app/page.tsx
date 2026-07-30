@@ -5,7 +5,6 @@ import Navigation from '@/components/Navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { getPathWithLanguage } from '@/lib/i18n'
 import { useState, useEffect } from 'react'
-import { getLatestNews } from '@/lib/newsData'
 import { branches } from '@/lib/branchData'
 
 const chitCatalog = [
@@ -90,7 +89,7 @@ export default function HomePage() {
               <span className="relative z-10">{t.home.hero.primaryCta}</span>
             </Link>
             <Link 
-              href={getLocalizedPath('/news')} 
+              href={getLocalizedPath('/gallery')} 
               className="group bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 hover:border-white/50 px-12 py-5 rounded-full transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:scale-105 text-lg font-bold min-h-[56px] flex items-center justify-center"
             >
               {t.home.hero.secondaryCta}
@@ -191,83 +190,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest Updates Section - Special Attraction */}
-      <section className="py-24 px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+      {/* Gallery Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-white px-6 py-24">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-400 rounded-full blur-3xl"></div>
+          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-sky-300 blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#D9A441]/40 blur-3xl" />
         </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full mb-6 animate-pulse">
-              <span className="text-2xl">✨</span>
-              <span className="font-bold text-sm uppercase tracking-wide">{language === 'te' ? 'కొత్త వార్తలు' : 'Latest Updates'}</span>
-              <span className="text-2xl">✨</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0F2747] mb-6">
-              {language === 'te' ? 'తాజా వార్తలు & ఈవెంట్స్' : 'Latest News & Events'}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {language === 'te' 
-                ? 'మా తాజా వార్తలు మరియు ఈవెంట్స్‌ను తనిఖీ చేయండి'
-                : 'Stay updated with our latest news and events'
-              }
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {getLatestNews(2).map((news, index) => {
-              const formatDate = (dateString: string) => {
-                const date = new Date(dateString)
-                if (language === 'te') {
-                  return date.toLocaleDateString('te-IN', { year: 'numeric', month: 'short', day: 'numeric' })
-                }
-                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
-              }
-
-              return (
-                <Link
-                  key={news.id}
-                  href={getLocalizedPath('/news')}
-                  className="premium-card p-6 hover-lift group bg-white/90 backdrop-blur-sm border-2 border-blue-200 hover:border-purple-400 transition-all duration-300 cursor-pointer block"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
-                          {formatDate(news.date)}
-                        </span>
-                        <span className="px-2 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-bold animate-pulse">
-                          {language === 'te' ? 'కొత్తది' : 'NEW'}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-black text-[#0F2747] mb-3 group-hover:text-[#245C8E] transition-colors line-clamp-2">
-                        {language === 'te' ? news.title_te : news.title_en}
-                      </h3>
-                      <p className="text-gray-600 text-base leading-relaxed line-clamp-2">
-                        {language === 'te' ? news.summary_te : news.summary_en}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-[#0F2747] font-bold group-hover:text-[#245C8E] transition-colors">
-                    <span className="text-sm">{language === 'te' ? 'మరింత చదవండి' : 'Read More'}</span>
-                    <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href={getLocalizedPath('/news')}
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#0F2747] to-[#245C8E] text-white rounded-full hover:from-[#245C8E] hover:to-[#0F2747] transition-all duration-300 font-black text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 min-h-[56px]"
-            >
-              <span>{language === 'te' ? 'అన్ని వార్తలు చూడండి' : 'View All News & Events'}</span>
-              <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
-            </Link>
-          </div>
+        <div className="relative z-10 mx-auto max-w-7xl text-center">
+          <h2 className="mb-6 text-4xl font-black text-[#0F2747] md:text-5xl lg:text-6xl">
+            {t.gallery.title}
+          </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-gray-600">
+            {t.gallery.subtitle}
+          </p>
+          <Link
+            href={getLocalizedPath('/gallery')}
+            className="group inline-flex min-h-[56px] items-center gap-3 rounded-full bg-gradient-to-r from-[#0F2747] to-[#245C8E] px-8 py-4 text-lg font-black text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:from-[#245C8E] hover:to-[#0F2747]"
+          >
+            <span>{t.gallery.viewAll}</span>
+            <span className="text-2xl transition-transform group-hover:translate-x-2">→</span>
+          </Link>
         </div>
       </section>
 
