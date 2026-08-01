@@ -240,17 +240,7 @@ export default function ChitsPage() {
       <Navigation />
 
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0F2747] to-[#245C8E] px-6 pb-16 pt-32 text-white">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-white blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[#D9A441] blur-3xl" />
-        </div>
-        <div className="relative z-10 mx-auto max-w-7xl text-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo.svg"
-            alt="Brindavan Chits Logo"
-            className="mx-auto mb-6 h-16 w-auto max-w-[280px] object-contain brightness-0 invert"
-          />
+        <div className="relative mx-auto max-w-7xl text-center">
           <h1 className="mb-4 text-5xl font-black md:text-6xl lg:text-7xl">
             {language === 'te' ? 'మా చిట్టీలు' : 'Our Chit Schemes'}
           </h1>

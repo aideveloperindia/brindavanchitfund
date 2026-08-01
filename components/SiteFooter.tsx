@@ -22,13 +22,9 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.9fr] lg:grid-cols-[1.35fr_0.95fr]">
           <div className="space-y-4">
-            <Link href={getLocalizedPath('/')} className="inline-flex items-center gap-3">
+            <Link href={getLocalizedPath('/')} className="inline-flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Brindavan Chits Logo" className="h-10 w-auto max-w-[180px] object-contain" />
-              <div>
-                <p className="text-lg font-black tracking-tight text-[#0F2747]">Brindavan Chits</p>
-                <p className="text-sm text-slate-600">Karimnagar (India) Pvt. Ltd.</p>
-              </div>
+              <img src="/logo.svg" alt="Brindavan Chits Logo" className="h-10 w-auto max-w-[220px] object-contain" />
             </Link>
             <p className="max-w-xl text-sm leading-relaxed text-slate-600">
               {language === 'te'

@@ -61,9 +61,6 @@ const leadership = [
   },
 ] as const
 
-const COMPANY_START_YEAR = 2007
-const yearsFrom2007 = new Date().getFullYear() - COMPANY_START_YEAR
-
 const hiddenDirectorNames = new Set(['Vala Hanmanthareddy'])
 
 export default function LeadershipPage() {
@@ -172,12 +169,9 @@ export default function LeadershipPage() {
                   <h3 className='mb-2 text-lg font-black text-[#0F2747] transition-colors group-hover:text-[#245C8E]'>
                     {language === 'te' ? person.name : person.name_en}
                   </h3>
-                  <p className='mb-3 font-bold text-[#D9A441]'>
+                  <p className='font-bold text-[#D9A441]'>
                     {language === 'te' ? person.role_te : person.role}
                   </p>
-                  <div className='font-bold text-[#0F2747]'>
-                    {yearsFrom2007} {language === 'te' ? 'సంవత్సరాల అనుభవం' : 'Years Experience'}
-                  </div>
                 </div>
               ))}
             </div>
