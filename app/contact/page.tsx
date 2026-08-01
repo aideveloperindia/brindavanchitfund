@@ -2,7 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
-import { branches } from '@/lib/branchData'
+import { branches, buildWhatsAppLink } from '@/lib/branchData'
 import { useState } from 'react'
 
 const contactInfo = {
@@ -23,9 +23,34 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In production, this would submit to a backend
-    alert(language === 'te' ? 'మెసేజ్ పంపబడింది!' : 'Message sent!')
-    setFormData({ name: '', phone: '', message: '', preferredTime: '' })
+
+    const lines =
+      language === 'te'
+        ? [
+            'నమస్కారం, నేను Brindavan Chits వెబ్‌సైట్ నుండి సంప్రదిస్తున్నాను.',
+            '',
+            `పేరు: ${formData.name}`,
+            `ఫోన్: ${formData.phone}`,
+            formData.preferredTime ? `సౌకర్యమైన సమయం: ${formData.preferredTime}` : '',
+            '',
+            `సందేశం: ${formData.message}`,
+          ]
+        : [
+            'Hello, I am contacting you from the Brindavan Chits website.',
+            '',
+            `Name: ${formData.name}`,
+            `Phone: ${formData.phone}`,
+            formData.preferredTime ? `Preferred time: ${formData.preferredTime}` : '',
+            '',
+            `Message: ${formData.message}`,
+          ]
+
+    const whatsappUrl = buildWhatsAppLink(
+      contactInfo.mobile,
+      lines.filter(Boolean).join('\n')
+    )
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
